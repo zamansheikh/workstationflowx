@@ -12,8 +12,12 @@
 <<<<<<< HEAD
     "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-dialog": "^1.1.13",
+<<<<<<< HEAD
 =======
 >>>>>>> 2a8d76c (project initialized and installed shadcn)
+=======
+    "@radix-ui/react-separator": "^1.1.6",
+>>>>>>> b9c6fa3 (sidebar fixed and admin dashboard design complete)
     "@radix-ui/react-slot": "^1.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

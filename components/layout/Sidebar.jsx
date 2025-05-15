@@ -9,9 +9,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { GrLogout } from "react-icons/gr";
-import { MdOutlineDashboard } from "react-icons/md";
-import { MdOutlineChatBubbleOutline } from "react-icons/md";
-import { RiSettings2Line } from "react-icons/ri";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 // import ChatHeader from "@/app/(main)/chat/components/ChatHeader";
 import { usePathname, useRouter } from "next/navigation";
@@ -19,37 +16,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { IoMdShareAlt } from "react-icons/io";
-// import logoImage from "@/public/Frame 2.svg";
-import Image from "next/image";
+import { FiPlus } from "react-icons/fi";
 import Navbar from "./Navbar";
+import { getNavLinks, navLinks } from "@/utils/navlinks";
 
-const navLinks = [
-  {
-    path: "/dashboard",
-    icon: MdOutlineDashboard,
-    label: "Dashboard",
-  },
-  {
-    path: "/chat",
-    icon: MdOutlineChatBubbleOutline,
-    label: "Chat",
-  },
-  {
-    path: "#",
-    icon: RiSettings2Line,
-    label: "Your Apps",
-  },
-];
-
-const publicRoutes = [
-  "/",
-  "/about",
-  "/connect",
-  "/security",
-  "/team",
-  "/login",
-];
+const publicRoutes = ["/", "/career"];
 
 const userAvatar =
   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -72,9 +43,9 @@ export default function Sidebar({ children, user }) {
 
   return (
     <div className="flex h-screen w-full">
-      <div className="hidden lg:block lg:w-64 lg:shrink-0  lg:bg-[#F1F1F1] dark:lg:bg-gray-800">
+      <div className="hidden fixed min-h-screen h-full lg:block lg:w-64 lg:shrink-0  lg:bg-primary dark:lg:bg-gray-800">
         {/* pc sidbar */}
-        <div className="flex h-full flex-col justify-between py-6 px-4 ">
+        <div className="flex h-full flex-col justify-between py-6 px-4">
           <div className="space-y-6">
             {/* sidebar header */}
             <Link
@@ -104,21 +75,30 @@ export default function Sidebar({ children, user }) {
             {/* sidebar links */}
             <nav className="space-y-1">
               {/* dashboard */}
-              {navLinks?.map((link) => (
+              {getNavLinks("teamLeader")?.map((link) => (
                 <Link
                   key={link.label}
                   href={link.path}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
                     pathName === link.path && "link-btn"
                   }`}
                   prefetch={false}
                 >
-                  <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
+                  {/* <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
                     <link.icon size={16} color="#101010" />
-                  </span>
+                  </span> */}
                   {link.label}
                 </Link>
               ))}
+              <Button
+                type="submit"
+                className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-white hover:bg-white/80 py-4 rounded text-black"
+                // variant="ghost"
+                // onClick={handleLogout}
+              >
+                <FiPlus />
+                Create Company
+              </Button>
             </nav>
           </div>
 
@@ -126,25 +106,14 @@ export default function Sidebar({ children, user }) {
           <div className="space-y-4">
             {/* <Button
               type="submit"
-              className="flex w-full justify-center items-center gap-2 text-sm cursor-pointer bg-[#01A846] hover:bg-[#01A846]/80 py-8 rounded text-white"
-              // variant="ghost"
-              // onClick={handleLogout}
-            >
-              <IoMdShareAlt className="size-6" />
-              <span>
-                Refer a Friend, <br /> get one month free!
-              </span>
-            </Button> */}
-            <Button
-              type="submit"
               className="flex items-center gap-2 text-sm cursor-pointer"
               variant="ghost"
               onClick={() => console.log("to profile page")}
             >
               <FaUserCircle className="size-6" />
               <span>Profile</span>
-            </Button>
-            <Button
+            </Button> */}
+            {/* <Button
               type="submit"
               className="flex items-center gap-2 text-sm cursor-pointer"
               variant="ghost"
@@ -152,6 +121,14 @@ export default function Sidebar({ children, user }) {
             >
               <GrLogout className="size-6" />
               <span>Logout</span>
+            </Button> */}
+            <Button
+              type="submit"
+              className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-red-200 hover:bg-red-300/80 py-4 rounded text-red-500"
+              // variant="ghost"
+              // onClick={handleLogout}
+            >
+              Log out
             </Button>
           </div>
         </div>
@@ -209,17 +186,6 @@ export default function Sidebar({ children, user }) {
                   {/* sidebar footer */}
                   <div className="space-y-4">
                     <div className="flex flex-col justify-start items-start gap-2 text-sm text-gray-500 dark:text-gray-400">
-                      {/* <Button
-                        type="submit"
-                        className="flex w-full justify-center items-center gap-2 text-sm cursor-pointer bg-[#01A846] hover:bg-[#01A846]/80 py-8 rounded text-white"
-                        // variant="ghost"
-                        // onClick={handleLogout}
-                      >
-                        <IoMdShareAlt className="size-6" />
-                        <span>
-                          Refer a Friend, <br /> get one month free!
-                        </span>
-                      </Button> */}
                       <Button
                         onClick={() => console.log("to profile page")}
                         className="flex items-center gap-2 text-sm cursor-pointer"
@@ -243,7 +209,7 @@ export default function Sidebar({ children, user }) {
             </Sheet>
           </div>
         </header>
-        <section className="p-2 pb-0 md:p-10 md:pb-0">
+        <section className="p-2 pb-0 md:p-7 md:pb-0 lg:ml-64">
           <Navbar />
           {children}
         </section>
