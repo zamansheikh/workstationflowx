@@ -4,55 +4,55 @@ import { RiSettings2Line } from "react-icons/ri";
 
 const adminNavLinks = [
   {
-    path: "/dashboard",
+    path: "/admin",
     icon: MdOutlineDashboard,
     label: "Dashboard",
   },
   {
-    path: "/chat",
+    path: "/companies",
     icon: MdOutlineChatBubbleOutline,
-    label: "Chat",
+    label: "Companies",
   },
   {
-    path: "#",
+    path: "/requests",
     icon: RiSettings2Line,
-    label: "Your Apps",
+    label: "Requests",
   },
 ];
 
 const companyOwnerNavLinks = [
   {
-    path: "/dashboard",
+    path: "/company",
     icon: MdOutlineDashboard,
-    label: "Dashboard",
+    label: "Overview",
   },
   {
-    path: "/chat",
+    path: "/branches",
     icon: MdOutlineChatBubbleOutline,
     label: "Chat",
   },
   {
-    path: "#",
+    path: "/employee",
     icon: RiSettings2Line,
-    label: "Your Apps",
+    label: "Employee",
   },
 ];
 
 const branchOwnerNavLinks = [
   {
-    path: "/dashboard",
+    path: "/branch",
     icon: MdOutlineDashboard,
-    label: "Dashboard",
+    label: "Overview",
   },
   {
-    path: "/chat",
+    path: "/teams",
     icon: MdOutlineChatBubbleOutline,
-    label: "Chat",
+    label: "Teams",
   },
   {
-    path: "#",
+    path: "/employee",
     icon: RiSettings2Line,
-    label: "Your Apps",
+    label: "Employee",
   },
 ];
 

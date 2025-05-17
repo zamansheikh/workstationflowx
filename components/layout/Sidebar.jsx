@@ -18,7 +18,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import Navbar from "./Navbar";
-import { getNavLinks, navLinks } from "@/utils/navlinks";
+import { getNavLinks } from "@/utils/navlinks";
 
 const publicRoutes = ["/", "/career"];
 
@@ -75,12 +75,12 @@ export default function Sidebar({ children, user }) {
             {/* sidebar links */}
             <nav className="space-y-1">
               {/* dashboard */}
-              {getNavLinks("teamLeader")?.map((link) => (
+              {getNavLinks("admin")?.map((link) => (
                 <Link
                   key={link.label}
                   href={link.path}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
-                    pathName === link.path && "link-btn"
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
+                    pathName === link.path && "bg-white/20"
                   }`}
                   prefetch={false}
                 >
@@ -163,12 +163,12 @@ export default function Sidebar({ children, user }) {
                 <div className="flex h-full flex-col justify-between py-6 px-4 mt-4">
                   <div className="space-y-6">
                     <nav className="space-y-1">
-                      {navLinks?.map((link) => (
+                      {getNavLinks("admin")?.map((link) => (
                         <Link
                           key={link.label}
                           href={link.path}
-                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
-                            pathName === link.path && "link-btn"
+                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white/20 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
+                            pathName === link.path && "bg-white/20"
                           }`}
                           prefetch={false}
                           onClick={() => setIsOpen(false)}
