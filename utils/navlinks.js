@@ -6,7 +6,7 @@ const adminNavLinks = [
   {
     path: "/admin",
     icon: MdOutlineDashboard,
-    label: "Dashboard",
+    label: "Overview",
   },
   {
     path: "/companies",
