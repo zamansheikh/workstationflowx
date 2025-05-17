@@ -9,15 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-dialog": "^1.1.13",
-<<<<<<< HEAD
-=======
->>>>>>> 2a8d76c (project initialized and installed shadcn)
-=======
     "@radix-ui/react-separator": "^1.1.6",
->>>>>>> b9c6fa3 (sidebar fixed and admin dashboard design complete)
     "@radix-ui/react-slot": "^1.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -25,10 +19,7 @@
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-<<<<<<< HEAD
     "react-icons": "^5.5.0",
-=======
->>>>>>> 2a8d76c (project initialized and installed shadcn)
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
