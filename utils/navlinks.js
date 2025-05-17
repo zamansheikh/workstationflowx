@@ -58,7 +58,7 @@ const branchOwnerNavLinks = [
 
 const teamLeaderNavLinks = [
   {
-    path: "/dashboard",
+    path: "/teamLeader",
     icon: MdOutlineDashboard,
     label: "Overview",
   },
