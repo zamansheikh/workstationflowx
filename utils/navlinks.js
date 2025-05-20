@@ -1,6 +1,7 @@
 import { MdOutlineDashboard } from "react-icons/md";
 import { MdOutlineChatBubbleOutline } from "react-icons/md";
 import { RiSettings2Line } from "react-icons/ri";
+import { FiPlus } from "react-icons/fi";
 
 const adminNavLinks = [
   {
@@ -17,6 +18,12 @@ const adminNavLinks = [
     path: "/requests",
     icon: RiSettings2Line,
     label: "Requests",
+  },
+  {
+    path: "/create_company",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Company",
   },
 ];
 

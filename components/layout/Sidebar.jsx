@@ -79,18 +79,32 @@ export default function Sidebar({ children, user }) {
                 <Link
                   key={link.label}
                   href={link.path}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium  hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${
                     pathName === link.path && "bg-white/20"
+                  } ${link.unique ? "bg-white text-primary" : "text-white"} ${
+                    link.unique &&
+                    pathName === link.path &&
+                    "bg-transparent border border-white text-white cursor-not-allowed"
                   }`}
                   prefetch={false}
                 >
-                  {/* <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
-                    <link.icon size={16} color="#101010" />
-                  </span> */}
+                  {link?.unique && (
+                    // <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
+                    <span className="p-[6px] flex justify-center items-center rounded-full">
+                      <link.icon
+                        size={16}
+                        color={
+                          link.unique && pathName === link.path
+                            ? "white"
+                            : "rgb(15, 63, 101)"
+                        }
+                      />
+                    </span>
+                  )}
                   {link.label}
                 </Link>
               ))}
-              <Button
+              {/* <Button
                 type="submit"
                 className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-white hover:bg-white/80 py-4 rounded text-black"
                 // variant="ghost"
@@ -98,7 +112,7 @@ export default function Sidebar({ children, user }) {
               >
                 <FiPlus />
                 Create Company
-              </Button>
+              </Button> */}
             </nav>
           </div>
 
