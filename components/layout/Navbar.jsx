@@ -8,7 +8,7 @@ const userAvatar =
 
 export default function Navbar() {
   return (
-    <div className="bg-primary flex justify-between items-center px-4 lg:p-3 lg:px-5  rounded-lg mb-3 lg:mb-6 sticky top-0">
+    <div className="bg-primary flex justify-between items-center px-4 lg:p-3 lg:px-5 rounded-lg mb-3 lg:mb-6 sticky top-0 z-10">
       {/* welcome msg */}
       <div className="text-white py-3 lg:py-3 rounded-lg lg:rounded-xl">
         <h1 className="text-[32px] font-extrabold">Welcome,</h1>

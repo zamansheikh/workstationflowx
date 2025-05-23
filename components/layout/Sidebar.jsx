@@ -19,6 +19,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import Navbar from "./Navbar";
 import { getNavLinks } from "@/utils/navlinks";
+import Image from "next/image";
+import logoImage from "@/public/logo.svg";
 
 const publicRoutes = ["/", "/career"];
 
@@ -50,10 +52,16 @@ export default function Sidebar({ children, user }) {
             {/* sidebar header */}
             <Link
               href="#"
-              className="flex items-center gap-3 font-bold"
+              className="flex items-center justify-center gap-3 font-bold"
               prefetch={false}
             >
-              <Avatar>
+              <Image
+                src={logoImage}
+                alt="workflowstationx_logo"
+                width={100}
+                height={100}
+              />
+              {/* <Avatar>
                 <AvatarImage
                   src={user?.profilePicture || userAvatar}
                   alt={user?.name || "N/A"}
@@ -61,15 +69,15 @@ export default function Sidebar({ children, user }) {
                 <AvatarFallback className="bg-gradient-to-r from-[#00ACDA] to-[#43D4FB] text-sm">
                   N/A
                 </AvatarFallback>
-              </Avatar>
-              <div>
+              </Avatar> */}
+              {/* <div>
                 <h4 className="font-semibold text-[20px]">
                   {user?.name || "N/A"}
                 </h4>
                 <span className="text-xs font-light text-[#101010]">
                   {user?.email || "N/A"}
                 </span>
-              </div>
+              </div> */}
             </Link>
 
             {/* sidebar links */}
@@ -79,18 +87,32 @@ export default function Sidebar({ children, user }) {
                 <Link
                   key={link.label}
                   href={link.path}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium text-white hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium  hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${
                     pathName === link.path && "bg-white/20"
+                  } ${link.unique ? "bg-white text-primary" : "text-white"} ${
+                    link.unique &&
+                    pathName === link.path &&
+                    "bg-transparent border border-white text-white cursor-not-allowed"
                   }`}
                   prefetch={false}
                 >
-                  {/* <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
-                    <link.icon size={16} color="#101010" />
-                  </span> */}
+                  {link?.unique && (
+                    // <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
+                    <span className="p-[6px] flex justify-center items-center rounded-full">
+                      <link.icon
+                        size={16}
+                        color={
+                          link.unique && pathName === link.path
+                            ? "white"
+                            : "rgb(15, 63, 101)"
+                        }
+                      />
+                    </span>
+                  )}
                   {link.label}
                 </Link>
               ))}
-              <Button
+              {/* <Button
                 type="submit"
                 className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-white hover:bg-white/80 py-4 rounded text-black"
                 // variant="ghost"
@@ -98,7 +120,7 @@ export default function Sidebar({ children, user }) {
               >
                 <FiPlus />
                 Create Company
-              </Button>
+              </Button> */}
             </nav>
           </div>
 
@@ -136,19 +158,19 @@ export default function Sidebar({ children, user }) {
 
       <div className="flex-1">
         {/* mobile sidebar */}
-        <header className="sticky top-0 z-10 border-b bg-white px-2 md:px-4 py-3 dark:border-gray-800 dark:bg-gray-900 lg:hidden">
+        <header className="sticky top-0 z-10 border-b bg-primary px-2 md:px-4 py-3 dark:border-gray-800 dark:bg-gray-900 lg:hidden">
           <div className="flex items-center justify-between">
             <Link
               href="#"
               className="flex items-center gap-2 font-bold"
               prefetch={false}
             >
-              {/* <Image
+              <Image
                 src={logoImage}
-                alt="Index Ai Logo"
-                className="si w-28 lg:w-fit"
-              /> */}
-              <h1 className="text-3xl font-bold">WorkFlow_X</h1>
+                alt="workflowstationx_logo"
+                className=" w-28 lg:w-fit"
+              />
+              {/* <h1 className="text-3xl font-bold">WorkFlow_X</h1> */}
             </Link>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -186,14 +208,14 @@ export default function Sidebar({ children, user }) {
                   {/* sidebar footer */}
                   <div className="space-y-4">
                     <div className="flex flex-col justify-start items-start gap-2 text-sm text-gray-500 dark:text-gray-400">
-                      <Button
+                      {/* <Button
                         onClick={() => console.log("to profile page")}
                         className="flex items-center gap-2 text-sm cursor-pointer"
                         variant="ghost"
                       >
                         <FaUserCircle className="size-6" />
                         <span>Profile</span>
-                      </Button>
+                      </Button> */}
                       <Button
                         onClick={handleLogout}
                         className="flex items-center gap-2 text-sm cursor-pointer"
