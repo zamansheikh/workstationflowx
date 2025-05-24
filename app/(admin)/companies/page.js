@@ -7,7 +7,7 @@ const Page = () => {
       {/* page title */}
       <h2 className="text-[32px] font-bold mb-8">Company list</h2>
 
-      {/* companie lists */}
+      {/* company lists */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
         {Array(8)
           .fill("c")
@@ -16,7 +16,7 @@ const Page = () => {
           ))}
       </div>
 
-      {/* paginations */}
+      {/* pagination */}
       <PaginationComponent />
     </div>
   );

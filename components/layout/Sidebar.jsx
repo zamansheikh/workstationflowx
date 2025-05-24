@@ -69,8 +69,8 @@ export default function Sidebar({ children, user }) {
                 <AvatarFallback className="bg-gradient-to-r from-[#00ACDA] to-[#43D4FB] text-sm">
                   N/A
                 </AvatarFallback>
-              </Avatar> */}
-              {/* <div>
+              </Avatar>
+              <div>
                 <h4 className="font-semibold text-[20px]">
                   {user?.name || "N/A"}
                 </h4>
@@ -83,7 +83,7 @@ export default function Sidebar({ children, user }) {
             {/* sidebar links */}
             <nav className="space-y-1">
               {/* dashboard */}
-              {getNavLinks("admin")?.map((link) => (
+              {getNavLinks("companyOwner")?.map((link) => (
                 <Link
                   key={link.label}
                   href={link.path}
