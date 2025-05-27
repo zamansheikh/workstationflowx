@@ -36,7 +36,7 @@ const companyOwnerNavLinks = [
   {
     path: "/branches",
     icon: MdOutlineChatBubbleOutline,
-    label: "Chat",
+    label: "Branch",
   },
   {
     path: "/employee",
