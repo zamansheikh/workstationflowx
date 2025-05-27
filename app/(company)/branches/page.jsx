@@ -1,18 +1,16 @@
+import React from "react";
+import BranchCard from "../components/BranchCard";
 import PaginationComponent from "@/components/PaginationComponent";
-import CompanyCard from "../admin/components/CompanyCard";
 
-const Page = () => {
+const BranchList = () => {
   return (
     <div>
-      {/* page title */}
-      <h2 className="text-[32px] font-bold mb-8">Company list</h2>
-
-      {/* company lists */}
+      <h1 className="text-3xl font-semibold mb-7">Branch List</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
         {Array(8)
           .fill("c")
           .map((_, i) => (
-            <CompanyCard key={i} />
+            <BranchCard key={i} />
           ))}
       </div>
 
@@ -22,4 +20,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default BranchList;
