@@ -126,8 +126,16 @@ export default function EmployeeList() {
           <TableBody className="overflow-x-scroll">
             {employeeData.map((application) => (
               <TableRow key={application.id}>
-                <TableCell className="font-medium pl-8">
-                  {application.owner}
+                <TableCell className="font-medium pl-8 flex items-center gap-2">
+                  <img
+                    src={application.image}
+                    alt={application.owner}
+                    className="inline-block h-10 w-10 rounded-full object-cover"
+                  />
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold">{application.owner}</span>
+                    <span className="text-xs text-gray-500">{application.id}</span>
+                  </div>
                 </TableCell>
                 <TableCell>{application.email}</TableCell>
                 <TableCell>{application.phone}</TableCell>
