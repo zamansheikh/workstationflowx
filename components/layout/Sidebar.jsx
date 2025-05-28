@@ -61,23 +61,6 @@ export default function Sidebar({ children, user }) {
                 width={100}
                 height={100}
               />
-              {/* <Avatar>
-                <AvatarImage
-                  src={user?.profilePicture || userAvatar}
-                  alt={user?.name || "N/A"}
-                />
-                <AvatarFallback className="bg-gradient-to-r from-[#00ACDA] to-[#43D4FB] text-sm">
-                  N/A
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <h4 className="font-semibold text-[20px]">
-                  {user?.name || "N/A"}
-                </h4>
-                <span className="text-xs font-light text-[#101010]">
-                  {user?.email || "N/A"}
-                </span>
-              </div> */}
             </Link>
 
             {/* sidebar links */}
