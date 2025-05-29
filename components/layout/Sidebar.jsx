@@ -163,7 +163,7 @@ export default function Sidebar({ children, user }) {
                 </Button>
               </SheetTrigger>
 
-              {/* mobile navlinks */}
+              {/* mobile nav links */}
               <SheetContent side="left" className="w-64">
                 <div className="flex h-full flex-col justify-between py-6 px-4 mt-4">
                   <div className="space-y-6">
@@ -214,7 +214,7 @@ export default function Sidebar({ children, user }) {
             </Sheet>
           </div>
         </header>
-        <section className="p-2 pb-0 md:p-7 md:pb-0 lg:ml-64">
+        <section className="p-2 pb-0 md:p-5 md:pb-0 lg:ml-64">
           <Navbar />
           {children}
         </section>

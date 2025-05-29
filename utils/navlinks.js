@@ -43,6 +43,12 @@ const companyOwnerNavLinks = [
     icon: RiSettings2Line,
     label: "Employee",
   },
+  {
+    path: "/create_branch",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Branch",
+  },
 ];
 
 const branchOwnerNavLinks = [
