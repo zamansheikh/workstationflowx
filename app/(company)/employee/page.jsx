@@ -84,6 +84,7 @@ export default function EmployeeList() {
 
   return (
     <div>
+      <h1 className="text-3xl font-semibold mb-7">Employee List</h1>
       <div className="rounded-md border overflow-hidden">
         <div className="overflow-x-auto">
           <Table>
