@@ -5,6 +5,7 @@ import React from "react";
 import BranchCard from "../components/BranchCard";
 import Link from "next/link";
 import DeliveryProgressChart from "../components/DeliveryProgressChart";
+import Employee from "../components/Employee";
 const data = [
   {
     name: "JVAI",
@@ -68,15 +69,7 @@ const CompanyHome = () => {
           />
         </div>
         <div className="col-span-1">
-          <div className="bg-white p-4 rounded-lg shadow-md h-full">
-            <h2 className="text-xl font-semibold mb-4">Employee</h2>
-            <ul className="space-y-3">
-              <li className="text-sm text-gray-600">Activity 1: Description</li>
-              <li className="text-sm text-gray-600">Activity 2: Description</li>
-              <li className="text-sm text-gray-600">Activity 3: Description</li>
-              <li className="text-sm text-gray-600">Activity 4: Description</li>
-            </ul>
-          </div>
+          <Employee />
         </div>
       </div>
 
