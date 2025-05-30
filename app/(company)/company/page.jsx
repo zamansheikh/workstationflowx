@@ -69,7 +69,7 @@ const CompanyHome = () => {
         </div>
         <div className="col-span-1">
           <div className="bg-white p-4 rounded-lg shadow-md h-full">
-            <h2 className="text-xl font-semibold mb-4">Recent Activities</h2>
+            <h2 className="text-xl font-semibold mb-4">Employee</h2>
             <ul className="space-y-3">
               <li className="text-sm text-gray-600">Activity 1: Description</li>
               <li className="text-sm text-gray-600">Activity 2: Description</li>
