@@ -28,7 +28,7 @@ const formSchema = z.object({
 });
 
 const CreateBranchForm = () => {
-    const form = useForm({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       branchName: "",
@@ -46,6 +46,7 @@ const CreateBranchForm = () => {
     console.log(values);
     // Handle form submission here
   }
+  
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
