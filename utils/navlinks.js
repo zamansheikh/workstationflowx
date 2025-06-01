@@ -65,7 +65,7 @@ const branchOwnerNavLinks = [
 
 const teamLeaderNavLinks = [
   {
-    path: "/teamLeader",
+    path: "/leader",
     icon: MdOutlineDashboard,
     label: "Overview",
   },
@@ -88,6 +88,12 @@ const teamLeaderNavLinks = [
     path: "/members",
     icon: RiSettings2Line,
     label: "Analytics",
+  },
+  {
+    path: "/create_project",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Project",
   },
 ];
 

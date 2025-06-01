@@ -24,6 +24,8 @@ import logoImage from "@/public/logo.svg";
 
 const publicRoutes = ["/", "/career"];
 
+const userRole = "teamLeader";
+
 const userAvatar =
   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -61,29 +63,12 @@ export default function Sidebar({ children, user }) {
                 width={100}
                 height={100}
               />
-              {/* <Avatar>
-                <AvatarImage
-                  src={user?.profilePicture || userAvatar}
-                  alt={user?.name || "N/A"}
-                />
-                <AvatarFallback className="bg-gradient-to-r from-[#00ACDA] to-[#43D4FB] text-sm">
-                  N/A
-                </AvatarFallback>
-              </Avatar> */}
-              {/* <div>
-                <h4 className="font-semibold text-[20px]">
-                  {user?.name || "N/A"}
-                </h4>
-                <span className="text-xs font-light text-[#101010]">
-                  {user?.email || "N/A"}
-                </span>
-              </div> */}
             </Link>
 
             {/* sidebar links */}
             <nav className="space-y-1">
               {/* dashboard */}
-              {getNavLinks("admin")?.map((link) => (
+              {getNavLinks(userRole)?.map((link) => (
                 <Link
                   key={link.label}
                   href={link.path}
@@ -126,24 +111,6 @@ export default function Sidebar({ children, user }) {
 
           {/* sidebar footer */}
           <div className="space-y-4">
-            {/* <Button
-              type="submit"
-              className="flex items-center gap-2 text-sm cursor-pointer"
-              variant="ghost"
-              onClick={() => console.log("to profile page")}
-            >
-              <FaUserCircle className="size-6" />
-              <span>Profile</span>
-            </Button> */}
-            {/* <Button
-              type="submit"
-              className="flex items-center gap-2 text-sm cursor-pointer"
-              variant="ghost"
-              onClick={handleLogout}
-            >
-              <GrLogout className="size-6" />
-              <span>Logout</span>
-            </Button> */}
             <Button
               type="submit"
               className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-red-200 hover:bg-red-300/80 py-4 rounded text-red-500"
@@ -185,7 +152,7 @@ export default function Sidebar({ children, user }) {
                 <div className="flex h-full flex-col justify-between py-6 px-4 mt-4">
                   <div className="space-y-6">
                     <nav className="space-y-1">
-                      {getNavLinks("admin")?.map((link) => (
+                      {getNavLinks(userRole)?.map((link) => (
                         <Link
                           key={link.label}
                           href={link.path}
@@ -208,14 +175,6 @@ export default function Sidebar({ children, user }) {
                   {/* sidebar footer */}
                   <div className="space-y-4">
                     <div className="flex flex-col justify-start items-start gap-2 text-sm text-gray-500 dark:text-gray-400">
-                      {/* <Button
-                        onClick={() => console.log("to profile page")}
-                        className="flex items-center gap-2 text-sm cursor-pointer"
-                        variant="ghost"
-                      >
-                        <FaUserCircle className="size-6" />
-                        <span>Profile</span>
-                      </Button> */}
                       <Button
                         onClick={handleLogout}
                         className="flex items-center gap-2 text-sm cursor-pointer"
