@@ -7,6 +7,7 @@ function Card({ className, ...props }) {
     <div
       data-slot="card"
       className={cn(
+        // Reduced gap from gap-6 to gap-1 to align with updated design specifications for tighter spacing.
         "bg-card text-card-foreground flex flex-col gap-1 rounded-[20px] border py-6",
         className
       )}
