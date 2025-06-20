@@ -31,13 +31,13 @@ const CreateBranchForm = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      branchName: "",
-      branchId: "",
-      managerName: "",
+      companyName: "",
+      companyId: "",
+      ownerName: "",
       email: "",
       phone: "",
       password: "",
-      maxTeam: "",
+      maxBranch: "",
       maxEmployee: "",
     },
   });
