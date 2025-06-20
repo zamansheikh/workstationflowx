@@ -27,7 +27,7 @@ const publicRoutes = ["/", "/career"];
 const userAvatar =
   "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-export default function Sidebar({ children, user }) {
+export default function Sidebar({ children, user, role = "companyOwner" }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
 
@@ -61,22 +61,18 @@ export default function Sidebar({ children, user }) {
                 width={100}
                 height={100}
               />
-            </Link>
-
-            {/* sidebar links */}
+            </Link>            {/* sidebar links */}
             <nav className="space-y-1">
               {/* dashboard */}
-              {getNavLinks("companyOwner")?.map((link) => (
+              {getNavLinks(role)?.map((link) => (
                 <Link
                   key={link.label}
                   href={link.path}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium  hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${
-                    pathName === link.path && "bg-white/20"
-                  } ${link.unique ? "bg-white text-primary" : "text-white"} ${
-                    link.unique &&
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 text-lg font-medium  hover:bg-white/20 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${pathName === link.path && "bg-white/20"
+                    } ${link.unique ? "bg-white text-primary" : "text-white"} ${link.unique &&
                     pathName === link.path &&
                     "bg-transparent border border-white text-white cursor-not-allowed"
-                  }`}
+                    }`}
                   prefetch={false}
                 >
                   {link?.unique && (
@@ -130,8 +126,8 @@ export default function Sidebar({ children, user }) {
             <Button
               type="submit"
               className="flex w-full justify-start items-center gap-2 text-sm cursor-pointer bg-red-200 hover:bg-red-300/80 py-4 rounded text-red-500"
-              // variant="ghost"
-              // onClick={handleLogout}
+            // variant="ghost"
+            // onClick={handleLogout}
             >
               Log out
             </Button>
@@ -172,9 +168,8 @@ export default function Sidebar({ children, user }) {
                         <Link
                           key={link.label}
                           href={link.path}
-                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white/20 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${
-                            pathName === link.path && "bg-white/20"
-                          }`}
+                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-white/20 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${pathName === link.path && "bg-white/20"
+                            }`}
                           prefetch={false}
                           onClick={() => setIsOpen(false)}
                         >

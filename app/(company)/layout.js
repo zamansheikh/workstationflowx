@@ -6,5 +6,5 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return <Sidebar>{children}</Sidebar>;
+  return <Sidebar role="companyOwner">{children}</Sidebar>;
 }

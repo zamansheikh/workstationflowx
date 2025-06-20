@@ -51,7 +51,7 @@ const companyOwnerNavLinks = [
   },
 ];
 
-const branchOwnerNavLinks = [
+const branchManagerNavLinks = [
   {
     path: "/branch",
     icon: MdOutlineDashboard,
@@ -63,37 +63,72 @@ const branchOwnerNavLinks = [
     label: "Teams",
   },
   {
-    path: "/employee",
+    path: "/branch-employees",
     icon: RiSettings2Line,
-    label: "Employee",
+    label: "Employees",
+  },
+  {
+    path: "/create-team",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Team",
   },
 ];
 
 const teamLeaderNavLinks = [
   {
-    path: "/teamLeader",
+    path: "/team-leader",
     icon: MdOutlineDashboard,
     label: "Overview",
   },
   {
-    path: "/project",
+    path: "/projects",
     icon: MdOutlineChatBubbleOutline,
-    label: "Project",
+    label: "Projects",
   },
   {
-    path: "/members",
+    path: "/team-members",
     icon: RiSettings2Line,
     label: "Members",
   },
   {
-    path: "/members",
+    path: "/kpi",
     icon: RiSettings2Line,
     label: "KPI",
   },
   {
-    path: "/members",
+    path: "/analytics",
     icon: RiSettings2Line,
     label: "Analytics",
+  },
+  {
+    path: "/create-project",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Project",
+  },
+];
+
+const employeeNavLinks = [
+  {
+    path: "/employee-dashboard",
+    icon: MdOutlineDashboard,
+    label: "Overview",
+  },
+  {
+    path: "/my-projects",
+    icon: MdOutlineChatBubbleOutline,
+    label: "My Projects",
+  },
+  {
+    path: "/my-team",
+    icon: RiSettings2Line,
+    label: "My Team",
+  },
+  {
+    path: "/my-performance",
+    icon: RiSettings2Line,
+    label: "Performance",
   },
 ];
 
@@ -103,10 +138,12 @@ export const getNavLinks = (role) => {
       return adminNavLinks;
     case "companyOwner":
       return companyOwnerNavLinks;
-    case "branchOwner":
-      return branchOwnerNavLinks;
+    case "branchManager":
+      return branchManagerNavLinks;
     case "teamLeader":
       return teamLeaderNavLinks;
+    case "employee":
+      return employeeNavLinks;
     default:
       return [];
   }
