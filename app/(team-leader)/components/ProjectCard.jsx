@@ -74,13 +74,12 @@ const ProjectCard = ({ project }) => {
                         </div>
                     ))}
                 </div>
-                {/* Phase Progress Section */}
-                <div className="mb-4 flex-1">
+                {/* Phase Progress Section */}                <div className="mb-4 flex-1">
                     <h4 className="text-sm font-semibold text-gray-900 mb-3">Phase Progress</h4>
 
                     {projectData.phases && Array.isArray(projectData.phases) && projectData.phases.map((phase, index) => (
                         <div key={index} className="mb-3 last:mb-0">
-                            <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center justify-between mb-1">
                                 <div className="relative">
                                     <span
                                         className="text-sm text-gray-700 cursor-pointer hover:text-gray-900"
@@ -96,18 +95,18 @@ const ProjectCard = ({ project }) => {
                                         </div>
                                     )}
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-sm font-medium text-orange-500">{phase.progress}%</span>
-                                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <span className="text-xs font-medium text-orange-600">{phase.progress}%</span>
-                                    </div>
-                                </div>
                             </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2">
-                                <div
-                                    className="bg-orange-400 h-2 rounded-full transition-all duration-300"
-                                    style={{ width: `${phase.progress}%` }}
-                                ></div>
+                            <div className="relative mb-1">
+                                <div className="flex justify-between items-center mb-1">
+                                    <span className="text-sm font-medium text-orange-500">{phase.progress}%</span>
+                                    <span className="text-sm font-medium text-gray-500">100%</span>
+                                </div>
+                                <div className="w-full bg-gray-200 rounded-full h-2">
+                                    <div
+                                        className="bg-orange-400 h-2 rounded-full transition-all duration-300"
+                                        style={{ width: `${phase.progress}%` }}
+                                    ></div>
+                                </div>
                             </div>
                         </div>
                     ))}
