@@ -8,6 +8,7 @@ import TopPerformers from "../components/TopPerformers";
 import TeamList from "../components/TeamList";
 import UrgentTasks from "../components/UrgentTasks";
 import { FiPlus } from "react-icons/fi";
+import ProjectCard from "../components/ProjectCard";
 
 const data = [
     { name: "aug_go", Target: 100, Delivery: 55 },
@@ -78,9 +79,6 @@ const Page = () => {
             <div className="flex gap-6">
                 {/* Team List - 2/3 */}
                 <div className="w-full lg:w-2/3">
-                    <ProjectCard />
-                    <ProjectCard />
-                    <ProjectCard />
                     <ProjectCard />
                 </div>
 
