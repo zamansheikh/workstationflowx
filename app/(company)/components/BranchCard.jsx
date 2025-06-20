@@ -6,8 +6,8 @@ import { Separator } from "@/components/ui/separator";
 const demoLogo =
   "https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg?t=st=1747292748~exp=1747296348~hmac=05fef0386713fe0451832f4b762875fc4ad41dfefac47d63eb5dc05d81951969&w=1380";
 
-const BranchCard = () => {
-    return (
+export default function BranchCard() {
+  return (
     <Card className="w-full bg-white py-4">
       {/* <Image src={demoLogo} alt="demo log" /> */}
       <CardContent className="">
@@ -24,40 +24,42 @@ const BranchCard = () => {
             </AvatarFallback>
           </Avatar>
           <div className="flex flex-col">
-            <h2 className="text-xl font-bold">deCoders Clan</h2>
+            <h2 className="text-xl font-bold">BDCalling</h2>
             <p className="text-gray-500 text-sm">ID: #12403</p>
           </div>
-        </div>
-
-        <div className="space-y-2 mb-4">
+        </div>        <div className="space-y-2 mb-4">
           <div className="flex">
-            <span className="font-bold text-base">Team Leader: &nbsp;</span>
+            <span className="font-bold text-base">Owner: &nbsp;</span>
             <span className="text-base"> Zaman Sheikh</span>
           </div>
 
           <div className="flex">
-            <span className="font-bold text-base">Running Projects: &nbsp;</span>
+            <span className="font-bold text-base">Email: &nbsp;</span>
+            <span className="text-base"> contact@bdcalling.com</span>
+          </div>
+
+          <div className="flex">
+            <span className="font-bold text-base">Phone: &nbsp;</span>
+            <span className="text-base"> +880 1234 567890</span>
+          </div>
+
+          <div className="flex">
+            <span className="font-bold text-base">Branch: &nbsp;</span>
             <span className="text-base"> 8</span>
           </div>
 
           <div className="flex">
-            <span className="font-bold text-base">Delivered Projects: &nbsp;</span>
+            <span className="font-bold text-base">Employee: &nbsp;</span>
             <span className="text-base"> 200</span>
-          </div>
-          <div className="flex">
-            <span className="font-bold text-base">Workload: &nbsp;</span>
-            <span className="text-base"> 30k</span>
           </div>
         </div>
 
         <Separator className=" bg-gray-200" />
 
         <div className="flex justify-end pt-3">
-          <span className="text-gray-500 text-sm">Delivery: 120k/200k</span>
+          <span className="text-gray-500 text-sm">20 Jun 2028</span>
         </div>
       </CardContent>
     </Card>
   );
-};
-
-export default BranchCard;
+}

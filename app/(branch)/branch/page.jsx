@@ -42,9 +42,9 @@ const data = [
 
 const Page = () => {
     return (
-        <div className="flex flex-col justify-between gap-6 xl:gap-0 h-[77vh]">
+        <div className="p-6 space-y-6">
             {/* info cards */}
-            <div className="flex flex-col xl:flex-row gap-4 pt-8 md:mt-0">
+            <div className="flex flex-col xl:flex-row gap-4">
                 <DashboardInfoCard title="Total Teams" quantity={6} />
                 <DashboardInfoCard title="Monthly Target" quantity="$120k" />
                 <DashboardInfoCard title="Monthly Delivery" quantity="$30k" />
@@ -65,7 +65,7 @@ const Page = () => {
             </div>
 
             {/* teams lists */}
-            <div className="">
+            <div>
                 {/* team list header */}
                 <div className="flex w-full justify-between items-center mb-6">
                     <h2 className="text-[32px] font-bold">Team List</h2>
@@ -78,7 +78,7 @@ const Page = () => {
                 </div>
 
                 {/* teams */}
-                <div className="flex flex-col xl:flex-row gap-5 pb-4">
+                <div className="flex flex-col xl:flex-row gap-5">
                     <TeamCard />
                     <TeamCard />
                     <TeamCard />
