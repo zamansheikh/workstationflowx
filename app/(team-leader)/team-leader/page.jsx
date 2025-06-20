@@ -78,6 +78,7 @@ const Page = () => {
                 {/* Projects - 2/3 */}
                 <div className="w-full lg:w-2/3">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        {/* Row 1 - Project 1 and 2 */}
                         <ProjectCard project={{
                             id: "PRJ-001",
                             name: "E-commerce Platform",
@@ -107,6 +108,38 @@ const Page = () => {
                             teamSize: 7,
                             description: "Secure mobile banking application with biometric authentication",
                             avatar: "https://randomuser.me/api/portraits/men/2.jpg"
+                        }} />
+
+                        {/* Row 2 - Project 3 and 4 */}
+                        <ProjectCard project={{
+                            id: "PRJ-003",
+                            name: "CRM Dashboard",
+                            client: "BusinessCorp",
+                            teamLead: "Picklu Nath",
+                            status: "Completed",
+                            priority: "Low",
+                            progress: 100,
+                            startDate: "2023-11-01",
+                            dueDate: "2023-12-30",
+                            budget: "$15,000",
+                            teamSize: 3,
+                            description: "Customer relationship management dashboard with analytics",
+                            avatar: "https://randomuser.me/api/portraits/men/3.jpg"
+                        }} />
+                        <ProjectCard project={{
+                            id: "PRJ-004",
+                            name: "Learning Management System",
+                            client: "EduTech Academy",
+                            teamLead: "Sakib A Hasan",
+                            status: "In Progress",
+                            priority: "High",
+                            progress: 60,
+                            startDate: "2024-01-10",
+                            dueDate: "2024-04-20",
+                            budget: "$35,000",
+                            teamSize: 6,
+                            description: "Comprehensive LMS with video streaming and assessment tools",
+                            avatar: "https://randomuser.me/api/portraits/men/4.jpg"
                         }} />
                     </div>
                 </div>
