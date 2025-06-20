@@ -9,12 +9,12 @@ const Page = () => {
     <div className="">
       {/* info cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-8 md:mt-0">
-        <DashboardInfoCard title="Workload" quantity={"$50,000"} />
-        <DashboardInfoCard title="Target" quantity={"$1,200"} />
-        <DashboardInfoCard title="Delivery" quantity={"$1,000"} />
-        <DashboardInfoCard title="Due" quantity={"$120"} />
+        <DashboardInfoCard title="Workload" quantity={50000} />
+        <DashboardInfoCard title="Target" quantity={1200} />
+        <DashboardInfoCard title="Delivery" quantity={1000} />
+        <DashboardInfoCard title="Due" quantity={120} />
         <DashboardInfoCard title="Total Project" quantity={30} />
-        <DashboardInfoCard title="Members" quantity={"1,200k"} />
+        <DashboardInfoCard title="Members" quantity={1200000} />
         <DashboardInfoCard title="Cancel" quantity={1} />
         <Card className="w-full">
           <CardContent className="flex flex-col justify-between h-full gap-4">
