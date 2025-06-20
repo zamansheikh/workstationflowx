@@ -56,7 +56,7 @@ const CompanyHome = () => {
         <DashboardInfoCard title="Total Branch" quantity={120} />
         <DashboardInfoCard title="Monthly Target" quantity={`$${120}`} />
         <DashboardInfoCard title="Monthly Delivery" quantity={`$${120}`} />
-        <DashboardInfoCard title="Monthly Deu" quantity={`$${120}`} />
+        <DashboardInfoCard title="Monthly Due" quantity={`$${120}`} />
       </div>
 
       <div className="my-5 grid grid-cols-3 gap-5">
