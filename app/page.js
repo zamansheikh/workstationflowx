@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import logoImage from "@/public/logo.svg";
+import logoImage from "@/public/logo-black.png";
 
 const roles = [
   {
