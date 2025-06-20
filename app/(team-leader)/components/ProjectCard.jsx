@@ -74,14 +74,8 @@ const ProjectCard = ({ project }) => {
                         </div>
                     ))}
                 </div>
-
-                {/* Assigned Developers Row */}
-                <div className="flex justify-between items-center mb-4 text-sm text-gray-600">
-                    <span>Picklu</span>
-                    <span>Kafi</span>
-                </div>
-
-                {/* Phase Progress Section */}                <div className="mb-4 flex-1">
+                {/* Phase Progress Section */}
+                <div className="mb-4 flex-1">
                     <h4 className="text-sm font-semibold text-gray-900 mb-3">Phase Progress</h4>
 
                     {projectData.phases && Array.isArray(projectData.phases) && projectData.phases.map((phase, index) => (
