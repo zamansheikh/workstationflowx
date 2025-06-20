@@ -73,13 +73,42 @@ const Page = () => {
                 <div>
                     <TopPerformers />
                 </div>
-            </div>
-
-            {/* Bottom Section */}
+            </div>            {/* Bottom Section */}
             <div className="flex gap-6">
-                {/* Team List - 2/3 */}
+                {/* Projects - 2/3 */}
                 <div className="w-full lg:w-2/3">
-                    <ProjectCard />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <ProjectCard project={{
+                            id: "PRJ-001",
+                            name: "E-commerce Platform",
+                            client: "Tech Solutions Inc.",
+                            teamLead: "Zaman Sheikh",
+                            status: "In Progress",
+                            priority: "High",
+                            progress: 75,
+                            startDate: "2024-01-01",
+                            dueDate: "2024-02-15",
+                            budget: "$25,000",
+                            teamSize: 5,
+                            description: "Building a comprehensive e-commerce platform with advanced features",
+                            avatar: "https://randomuser.me/api/portraits/men/1.jpg"
+                        }} />
+                        <ProjectCard project={{
+                            id: "PRJ-002",
+                            name: "Mobile Banking App",
+                            client: "FinanceBank Ltd.",
+                            teamLead: "Abdullah Al Kafi",
+                            status: "Planning",
+                            priority: "Medium",
+                            progress: 20,
+                            startDate: "2024-01-15",
+                            dueDate: "2024-03-30",
+                            budget: "$40,000",
+                            teamSize: 7,
+                            description: "Secure mobile banking application with biometric authentication",
+                            avatar: "https://randomuser.me/api/portraits/men/2.jpg"
+                        }} />
+                    </div>
                 </div>
 
                 {/* Urgent Tasks - 1/3 */}
