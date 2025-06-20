@@ -61,23 +61,6 @@ export default function Sidebar({ children, user }) {
                 width={100}
                 height={100}
               />
-              {/* <Avatar>
-                <AvatarImage
-                  src={user?.profilePicture || userAvatar}
-                  alt={user?.name || "N/A"}
-                />
-                <AvatarFallback className="bg-gradient-to-r from-[#00ACDA] to-[#43D4FB] text-sm">
-                  N/A
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <h4 className="font-semibold text-[20px]">
-                  {user?.name || "N/A"}
-                </h4>
-                <span className="text-xs font-light text-[#101010]">
-                  {user?.email || "N/A"}
-                </span>
-              </div> */}
             </Link>
 
             {/* sidebar links */}
@@ -180,7 +163,7 @@ export default function Sidebar({ children, user }) {
                 </Button>
               </SheetTrigger>
 
-              {/* mobile navlinks */}
+              {/* mobile nav links */}
               <SheetContent side="left" className="w-64">
                 <div className="flex h-full flex-col justify-between py-6 px-4 mt-4">
                   <div className="space-y-6">
@@ -231,7 +214,7 @@ export default function Sidebar({ children, user }) {
             </Sheet>
           </div>
         </header>
-        <section className="p-2 pb-0 md:p-7 md:pb-0 lg:ml-64">
+        <section className="p-2 pb-0 md:p-5 md:pb-0 lg:ml-64">
           <Navbar />
           {children}
         </section>

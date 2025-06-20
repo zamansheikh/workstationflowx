@@ -10,9 +10,9 @@ export default function Navbar() {
   return (
     <div className="bg-primary flex justify-between items-center px-4 lg:p-3 lg:px-5 rounded-lg mb-3 lg:mb-6 sticky top-0 z-10">
       {/* welcome msg */}
-      <div className="text-white py-3 lg:py-3 rounded-lg lg:rounded-xl">
-        <h1 className="text-[32px] font-extrabold">Welcome,</h1>
-        <h4 className="text-xl font-medium">John</h4>
+      <div className="text-white rounded-lg lg:rounded-xl">
+        <h1 className="text-3xl font-extrabold">Welcome,</h1>
+        <h4 className="text-lg font-medium">John Doe</h4>
       </div>
 
       {/* user details */}
@@ -24,10 +24,10 @@ export default function Navbar() {
           </AvatarFallback>
         </Avatar>
         <div>
-          <h4 className="text-xl font-medium text-white">
+          <h4 className="text-lg font-medium text-white">
             {"John Doe" || "N/A"}
           </h4>
-          <span className="text-sm font-light text-[#ffffff]">
+          <span className="text-sm font-light text-white">
             {"Admin" || "N/A"}
           </span>
         </div>

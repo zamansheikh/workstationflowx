@@ -24,32 +24,36 @@ const BranchCard = () => {
             </AvatarFallback>
           </Avatar>
           <div className="flex flex-col">
-            <h2 className="text-xl font-bold">BDCalling</h2>
+            <h2 className="text-xl font-bold">deCoders Clan</h2>
             <p className="text-gray-500 text-sm">ID: #12403</p>
           </div>
         </div>
 
         <div className="space-y-2 mb-4">
           <div className="flex">
-            <span className="font-bold text-base">Owner: &nbsp;</span>
+            <span className="font-bold text-base">Team Leader: &nbsp;</span>
             <span className="text-base"> Zaman Sheikh</span>
           </div>
 
           <div className="flex">
-            <span className="font-bold text-base">Branch: &nbsp;</span>
+            <span className="font-bold text-base">Running Projects: &nbsp;</span>
             <span className="text-base"> 8</span>
           </div>
 
           <div className="flex">
-            <span className="font-bold text-base">Employee: &nbsp;</span>
+            <span className="font-bold text-base">Delivered Projects: &nbsp;</span>
             <span className="text-base"> 200</span>
+          </div>
+          <div className="flex">
+            <span className="font-bold text-base">Workload: &nbsp;</span>
+            <span className="text-base"> 30k</span>
           </div>
         </div>
 
         <Separator className=" bg-gray-200" />
 
         <div className="flex justify-end pt-3">
-          <span className="text-gray-500 text-sm">20 Jun 2028</span>
+          <span className="text-gray-500 text-sm">Delivery: 120k/200k</span>
         </div>
       </CardContent>
     </Card>
