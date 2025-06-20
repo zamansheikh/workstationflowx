@@ -36,7 +36,9 @@ const Page = () => {
                 <DashboardInfoCard title="Target" quantity="$1,200" />
                 <DashboardInfoCard title="Delivery" quantity="$1,000" />
                 <DashboardInfoCard title="Due" quantity="$120" />
-            </div>            {/* Second Row Cards */}            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            </div>
+            {/* Second Row Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <DashboardInfoCard title="Total Project" quantity="30" />
                 <DashboardInfoCard title="Member" quantity="1,200k" />
                 <DashboardInfoCard title="Cancel" quantity="1" />
@@ -73,12 +75,19 @@ const Page = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Team List */}
-                <TeamList />
+            <div className="flex gap-6">
+                {/* Team List - 2/3 */}
+                <div className="w-full lg:w-2/3">
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                    <ProjectCard />
+                </div>
 
-                {/* Urgent Tasks */}
-                <UrgentTasks />
+                {/* Urgent Tasks - 1/3 */}
+                <div className="w-full lg:w-1/3">
+                    <UrgentTasks />
+                </div>
             </div>
         </div>
     );
