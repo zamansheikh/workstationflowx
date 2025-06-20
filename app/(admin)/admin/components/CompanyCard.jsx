@@ -27,12 +27,20 @@ export default function CompanyCard() {
             <h2 className="text-xl font-bold">BDCalling</h2>
             <p className="text-gray-500 text-sm">ID: #12403</p>
           </div>
-        </div>
-
-        <div className="space-y-2 mb-4">
+        </div>        <div className="space-y-2 mb-4">
           <div className="flex">
             <span className="font-bold text-base">Owner: &nbsp;</span>
             <span className="text-base"> Zaman Sheikh</span>
+          </div>
+
+          <div className="flex">
+            <span className="font-bold text-base">Email: &nbsp;</span>
+            <span className="text-base"> contact@bdcalling.com</span>
+          </div>
+
+          <div className="flex">
+            <span className="font-bold text-base">Phone: &nbsp;</span>
+            <span className="text-base"> +880 1234 567890</span>
           </div>
 
           <div className="flex">
