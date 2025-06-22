@@ -165,40 +165,40 @@ export default function Sidebar({ children, user, role = "companyOwner" }: Sideb
               <SheetContent side="left" className="w-64">
                 <div className="flex h-full flex-col justify-between py-6 px-4 mt-4">
                   <div className="space-y-6">                    <nav className="space-y-1">
-                      {getNavLinks(role)?.map((link) => (                        <Link
-                          key={link.label}
-                          href={link.path}
-                          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${pathName === link.path && "bg-gray-100"
-                            } ${link.unique ? "bg-primary text-white hover:bg-primary/80" : "text-gray-700 dark:text-gray-400"} ${link.unique &&
-                            pathName === link.path &&
-                            "bg-gray-200 border border-primary text-primary cursor-not-allowed"
-                            }`}
-                          prefetch={false}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <span className="flex items-center gap-2">
-                            {link?.unique && (
-                              <span className="p-[6px] flex justify-center items-center rounded-full">
-                                <link.icon
-                                  size={16}
-                                  color={
-                                    link.unique && pathName === link.path
-                                      ? "rgb(15, 63, 101)"
-                                      : "white"
-                                  }
-                                />
-                              </span>
-                            )}
-                            {!link?.unique && (
-                              <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
-                                <link.icon size={16} color="rgb(15, 63, 101)" />
-                              </span>
-                            )}
-                            {link.label}
+                    {getNavLinks(role)?.map((link) => (<Link
+                      key={link.label}
+                      href={link.path}
+                      className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-50 mb-2 ${pathName === link.path && "bg-gray-100"
+                        } ${link.unique ? "bg-primary text-white hover:bg-primary/80" : "text-gray-700 dark:text-gray-400"} ${link.unique &&
+                        pathName === link.path &&
+                        "bg-gray-200 border border-primary text-primary cursor-not-allowed"
+                        }`}
+                      prefetch={false}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="flex items-center gap-2">
+                        {link?.unique && (
+                          <span className="p-[6px] flex justify-center items-center rounded-full">
+                            <link.icon
+                              size={16}
+                              color={
+                                link.unique && pathName === link.path
+                                  ? "rgb(15, 63, 101)"
+                                  : "white"
+                              }
+                            />
                           </span>
-                        </Link>
-                      ))}
-                    </nav>
+                        )}
+                        {!link?.unique && (
+                          <span className="bg-white p-[6px] flex justify-center items-center rounded-full">
+                            <link.icon size={16} color="rgb(15, 63, 101)" />
+                          </span>
+                        )}
+                        {link.label}
+                      </span>
+                    </Link>
+                    ))}
+                  </nav>
                   </div>
 
                   {/* sidebar footer */}
