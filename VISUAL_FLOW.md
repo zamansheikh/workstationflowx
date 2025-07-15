@@ -90,9 +90,11 @@ Pages: /branch, /teams, /branch-employees, /create-team
 │ 🎯 ASSIGN TASKS         │ 👥 TEAM MEMBERS                  │
 │ 📈 KPI TRACKING         │ ⏰ DEADLINE MANAGEMENT           │
 │ 💼 PROJECT MANAGEMENT   │ 🚨 URGENT TASKS                  │
+│ 💼 JOB POSTING          │ 📋 MANAGE APPLICATIONS           │
+│ 🔗 SHAREABLE LINKS      │ 👨‍💼 RECRUITMENT MANAGEMENT       │
 └─────────────────────────────────────────────────────────────┘
 
-Pages: /team-leader, /projects, /team-members, /kpi, /analytics, /create-project
+Pages: /team-leader, /projects, /team-members, /kpi, /analytics, /create-project, /job-posts, /create-job-post, /job-applicants
 ```
 
 ### 🟠 EMPLOYEE LEVEL
@@ -181,12 +183,19 @@ Pages: /employee-dashboard, /my-projects, /my-team, /my-performance
 │   ├── team-members       → Member Management
 │   ├── kpi                → KPI Tracking
 │   ├── analytics          → Team Analytics
-│   └── create-project     → Create Project Form
-└── (employee)/            → Employee Route Group
-    ├── employee-dashboard → Employee Dashboard
-    ├── my-projects        → Personal Projects
-    ├── my-team            → Team Information
-    └── my-performance     → Performance Tracking
+│   ├── create-project     → Create Project Form
+│   ├── job-posts          → Job Posts Management
+│   ├── create-job-post    → Create Job Post Form
+│   └── job-applicants     → Job Applications Management
+├── (employee)/            → Employee Route Group
+│   ├── employee-dashboard → Employee Dashboard
+│   ├── my-projects        → Personal Projects
+│   ├── my-team            → Team Information
+│   └── my-performance     → Performance Tracking
+└── jobs/                  → Public Job Portal (No Auth)
+    ├── jobs               → Public Job Listings
+    ├── jobs/[jobId]       → Individual Job Application
+    └── job-preview        → Job Preview System
 ```
 
 ## 🚀 Quick Access URLs
@@ -198,15 +207,83 @@ Pages: /employee-dashboard, /my-projects, /my-team, /my-performance
 - **Team Leader**: http://localhost:3000/team-leader
 - **Employee**: http://localhost:3000/employee-dashboard
 
+### Public Job Portal (No Authentication):
+- **Job Listings**: http://localhost:3000/jobs
+- **Job Application**: http://localhost:3000/jobs/[jobId]
+- **Job Preview**: http://localhost:3000/job-preview
+
+### Team Leader Job Management:
+- **Job Posts**: http://localhost:3000/job-posts
+- **Create Job**: http://localhost:3000/create-job-post
+- **Applications**: http://localhost:3000/job-applicants
+
 ### Key Features by Role:
 ```
 👑 Admin        : System Control & Company Creation
 🏢 Company      : Branch Creation & Employee Management
 🏪 Branch       : Team Creation & Local Management
-👨‍💼 Team Leader : Project Creation & Task Assignment
+👨‍💼 Team Leader : Project Creation, Task Assignment & Job Posting
 👩‍💻 Employee     : Task Completion & Progress Tracking
 ```
 
 ---
 
 *This document provides a comprehensive visual guide to understanding the WorkstationFlowX organizational structure and user flow.*
+
+## 🌐 Public Job Portal
+
+### Job Portal Flow (No Authentication Required)
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     PUBLIC JOB PORTAL                      │
+├─────────────────────────────────────────────────────────────┤
+│ 🔍 BROWSE JOBS          │ 📝 APPLY FOR JOBS               │
+│ 🎯 FILTER BY CATEGORY   │ 📄 UPLOAD RESUME                │
+│ 📍 SEARCH BY LOCATION   │ 💼 PORTFOLIO SUBMISSION         │
+│ 🔗 DIRECT ACCESS        │ 📧 EMAIL NOTIFICATIONS          │
+└─────────────────────────────────────────────────────────────┘
+
+Pages: /jobs, /jobs/[jobId]
+```
+
+### Job Application Process
+```
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│   PUBLIC    │───▶│   BROWSE    │───▶│    APPLY    │───▶│    TEAM     │
+│   ACCESS    │    │    JOBS     │    │  FOR JOB    │    │   LEADER    │
+│   Portal    │    │   (Filter)  │    │ (No Auth)   │    │   Reviews   │
+└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+       │                   │                   │                   │
+       ▼                   ▼                   ▼                   ▼
+  🔗 Shareable       🎯 Job Search      📝 Application      👨‍💼 Applicant
+     Links           & Filtering         Submission          Management
+```
+
+## 💼 Job Posting System Flow
+
+### Team Leader → Job Post Creation
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    JOB POSTING WORKFLOW                     │
+├─────────────────────────────────────────────────────────────┤
+│ 1. CREATE JOB POST      │ 2. GENERATE SHAREABLE LINK      │
+│ 3. MANAGE APPLICATIONS  │ 4. REVIEW & SHORTLIST           │
+│ 5. INTERVIEW PROCESS    │ 6. HIRE CANDIDATE               │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Job Post Lifecycle
+```
+📝 DRAFT → 🔄 ACTIVE → 📋 APPLICATIONS → 👨‍💼 REVIEW → ✅ HIRED/❌ CLOSED
+```
+
+### Application Management
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  APPLICATION TRACKING                       │
+├─────────────────────────────────────────────────────────────┤
+│ 📨 PENDING             │ 👀 REVIEWED                      │
+│ ⭐ SHORTLISTED         │ ❌ REJECTED                       │  
+│ 🎯 HIRED               │ 📊 ANALYTICS                     │
+└─────────────────────────────────────────────────────────────┘
+```
