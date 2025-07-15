@@ -73,6 +73,8 @@ WorkstationFlowX is a comprehensive workflow management system built with Next.j
   - Create and manage projects
   - Assign tasks to team members
   - Track team performance and KPIs
+  - Create and manage job postings
+  - Review job applications and filter candidates
 - **Available Pages**:
   - `/team-leader` - Team leader dashboard
   - `/projects` - Project management
@@ -80,6 +82,9 @@ WorkstationFlowX is a comprehensive workflow management system built with Next.j
   - `/kpi` - Key Performance Indicators
   - `/analytics` - Team analytics
   - `/create-project` - Project creation
+  - `/job-posts` - Job posting management
+  - `/create-job-post` - Job posting creation
+  - `/job-applicants` - Job applicant management
 
 #### 5. **Employee** (Individual Level)
 - **Route Group**: `(employee)`
@@ -223,6 +228,9 @@ app/
 - ✅ Team member management
 - ✅ Performance analytics
 - ✅ KPI tracking
+- ✅ Job posting creation and management
+- ✅ Public job application system
+- ✅ Applicant filtering and review
 
 ### Employee Features
 - ✅ Personal project view
@@ -265,6 +273,33 @@ app/
 - Mobile app integration
 - API integration for data management
 - Multi-language support
+- ✅ **Job Posting System** (NEW)
+  - Public job application portal
+  - Shareable job links
+  - Applicant filtering and management
+  - Resume upload and review system
+
+## 🆕 New Job Posting Features
+
+### Team Leader Job Management
+- **Job Post Creation**: Create detailed job postings with requirements, skills, and benefits
+- **Job Post Management**: View, edit, and manage all job postings
+- **Shareable Links**: Generate public links for job applications
+- **Applicant Review**: Review applications with filtering and scoring
+- **Application Management**: Track application status and add notes
+
+### Public Job Portal
+- **Public Job Listings**: Browse all active job postings at `/jobs`
+- **Job Application Form**: Apply for jobs without authentication at `/jobs/[jobId]`
+- **Resume Upload**: Upload resumes and portfolios
+- **Application Tracking**: Track application status
+
+### Job Posting Workflow
+1. **Team Leader** creates job posting with detailed requirements
+2. **System** generates shareable public link
+3. **Public Users** can browse jobs and apply without authentication
+4. **Team Leader** reviews applications and filters candidates
+5. **Team Leader** manages application status and hiring process
 
 ---
 

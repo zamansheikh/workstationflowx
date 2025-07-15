@@ -39,10 +39,11 @@ const Page = () => {
                 <DashboardInfoCard title="Due" quantity="$120" />
             </div>
             {/* Second Row Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <DashboardInfoCard title="Total Project" quantity="30" />
                 <DashboardInfoCard title="Member" quantity="1,200k" />
-                <DashboardInfoCard title="Cancel" quantity="1" />
+                <DashboardInfoCard title="Active Jobs" quantity="3" />
+                <DashboardInfoCard title="Job Applications" quantity="46" />
                 <Link href="/create-project">
                     <div className="w-full bg-white border-2 border-dashed border-blue-300 hover:border-blue-500 hover:bg-blue-50 transition-all duration-200 rounded-lg cursor-pointer group h-full">
                         <div className="p-6">

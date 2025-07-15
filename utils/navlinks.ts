@@ -2,6 +2,8 @@ import { MdOutlineDashboard } from "react-icons/md";
 import { MdOutlineChatBubbleOutline } from "react-icons/md";
 import { RiSettings2Line } from "react-icons/ri";
 import { FiPlus } from "react-icons/fi";
+import { MdOutlineWork } from "react-icons/md";
+import { MdOutlinePeople } from "react-icons/md";
 import { NavLink } from "@/types";
 
 const adminNavLinks: NavLink[] = [
@@ -93,6 +95,16 @@ const teamLeaderNavLinks: NavLink[] = [
     label: "Members",
   },
   {
+    path: "/job-posts",
+    icon: MdOutlineWork,
+    label: "Job Posts",
+  },
+  {
+    path: "/job-applicants",
+    icon: MdOutlinePeople,
+    label: "Applicants",
+  },
+  {
     path: "/kpi",
     icon: RiSettings2Line,
     label: "KPI",
@@ -107,6 +119,12 @@ const teamLeaderNavLinks: NavLink[] = [
     unique: true,
     icon: FiPlus,
     label: "Create Project",
+  },
+  {
+    path: "/create-job-post",
+    unique: true,
+    icon: FiPlus,
+    label: "Create Job Post",
   },
 ];
 

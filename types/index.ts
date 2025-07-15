@@ -127,3 +127,45 @@ export interface TeamCardProps {
     deliveredProjects: number;
     workload: string;
 }
+
+export interface JobPost {
+    id: string;
+    title: string;
+    department: string;
+    location: string;
+    type: 'full-time' | 'part-time' | 'contract' | 'internship';
+    experience: string;
+    salary: string;
+    description: string;
+    requirements: string[];
+    skills: string[];
+    benefits: string[];
+    deadline: string;
+    status: 'active' | 'closed' | 'draft';
+    createdAt: string;
+    updatedAt: string;
+    createdBy: string;
+    applicationsCount: number;
+    shareableLink: string;
+}
+
+export interface JobApplication {
+    id: string;
+    jobPostId: string;
+    applicantName: string;
+    applicantEmail: string;
+    applicantPhone: string;
+    resume: string;
+    coverLetter: string;
+    experience: string;
+    education: string;
+    skills: string[];
+    portfolio?: string;
+    linkedIn?: string;
+    github?: string;
+    status: 'pending' | 'reviewed' | 'shortlisted' | 'rejected' | 'hired';
+    appliedAt: string;
+    reviewedAt?: string;
+    notes?: string;
+    score?: number;
+}
