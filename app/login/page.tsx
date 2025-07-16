@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { FiEye, FiEyeOff, FiUser, FiLock, FiArrowRight } from "react-icons/fi";
 import { setAuthState, getRoleRedirectPath } from "@/utils/auth";
 import Link from "next/link";
+import Image from "next/image";
+import logoImage from "@/public/logo-black.png";
 
 interface LoginFormData {
     email: string;
@@ -68,45 +70,40 @@ const LoginPage = () => {
         }
     };
 
-    const getDemoCredentials = () => {
-        return { email: "admin20250716000000@workstationflowx.com", password: "Admin123!" };
-    };
 
-    const fillDemoCredentials = () => {
-        const demoData = getDemoCredentials();
-        setFormData(prev => ({
-            ...prev,
-            email: demoData.email,
-            password: demoData.password
-        }));
-    };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-100">
-            <div className="max-w-md w-full mx-4">
-                <Card className="shadow-xl border-0">
-                    <CardHeader className="space-y-1 text-center">
-                        <div className="flex justify-center mb-4">
-                            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                                <FiUser className="w-8 h-8 text-white" />
+        <div className="min-h-screen bg-background flex items-center justify-center p-4">
+            <div className="w-full max-w-md">
+                <Card className="shadow-lg">
+                    <CardHeader className="space-y-1 text-center pb-6">
+                        <div className="flex justify-center mb-6">
+                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md">
+                                <Image
+                                    src={logoImage}
+                                    alt="WorkstationFlowX Logo"
+                                    width={40}
+                                    height={40}
+                                    className="object-contain"
+                                />
                             </div>
                         </div>
-                        <CardTitle className="text-2xl font-bold text-gray-900">
-                            Sign In
+                        <CardTitle className="text-2xl font-bold text-foreground">
+                            Welcome Back
                         </CardTitle>
-                        <p className="text-gray-600">
-                            Access your WorkstationFlowX account
+                        <p className="text-muted-foreground text-sm">
+                            Sign in to your WorkstationFlowX account
                         </p>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="space-y-4">
                         <form onSubmit={handleLogin} className="space-y-4">
                             {/* Email Input */}
                             <div className="space-y-2">
-                                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                                <Label htmlFor="email" className="text-sm font-medium text-foreground">
                                     Email Address
                                 </Label>
                                 <div className="relative">
-                                    <FiUser className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                                    <FiUser className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                                     <Input
                                         id="email"
                                         type="email"
@@ -121,11 +118,11 @@ const LoginPage = () => {
 
                             {/* Password Input */}
                             <div className="space-y-2">
-                                <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                                <Label htmlFor="password" className="text-sm font-medium text-foreground">
                                     Password
                                 </Label>
                                 <div className="relative">
-                                    <FiLock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                                    <FiLock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                                     <Input
                                         id="password"
                                         type={showPassword ? "text" : "password"}
@@ -138,27 +135,17 @@ const LoginPage = () => {
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-3 top-3 h-4 w-4 text-gray-400 hover:text-gray-600"
+                                        className="absolute right-3 top-3 h-4 w-4 text-muted-foreground hover:text-foreground"
                                     >
                                         {showPassword ? <FiEyeOff /> : <FiEye />}
                                     </button>
                                 </div>
                             </div>
 
-                            {/* Demo Credentials Button */}
-                            <Button
-                                type="button"
-                                variant="outline"
-                                onClick={fillDemoCredentials}
-                                className="w-full text-sm"
-                            >
-                                Use Demo Credentials (Admin)
-                            </Button>
-
                             {/* Error Message */}
                             {error && (
-                                <div className="bg-red-50 border border-red-200 rounded-md p-3">
-                                    <p className="text-sm text-red-600">{error}</p>
+                                <div className="bg-destructive/15 border border-destructive/30 rounded-md p-3">
+                                    <p className="text-sm text-destructive">{error}</p>
                                 </div>
                             )}
 
@@ -166,11 +153,11 @@ const LoginPage = () => {
                             <Button
                                 type="submit"
                                 disabled={loading || !formData.email || !formData.password}
-                                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-6"
                             >
                                 {loading ? (
                                     <div className="flex items-center gap-2">
-                                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                        <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
                                         Signing in...
                                     </div>
                                 ) : (
@@ -184,7 +171,7 @@ const LoginPage = () => {
 
                         {/* Additional Links */}
                         <div className="mt-6 text-center">
-                            <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-800">
+                            <Link href="/forgot-password" className="text-sm text-primary hover:text-primary/80">
                                 Forgot your password?
                             </Link>
                         </div>
