@@ -64,6 +64,18 @@ export default function Home() {
           <p className="text-xl text-gray-600 mb-8">
             Choose your role to access the dashboard
           </p>
+          <div className="flex gap-4 justify-center mb-8">
+            <Link href="/login">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3">
+                Login to Dashboard
+              </Button>
+            </Link>
+            <Link href="/jobs">
+              <Button variant="outline" className="px-8 py-3">
+                Browse Jobs
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Role Cards */}

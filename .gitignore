@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+API_DOCUMENTATION.md
+test_complete_flow.ps1
+VISUAL_FLOW.md

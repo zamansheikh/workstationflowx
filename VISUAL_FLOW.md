@@ -287,3 +287,114 @@ Pages: /jobs, /jobs/[jobId]
 │ 🎯 HIRED               │ 📊 ANALYTICS                     │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+## 🔐 Authentication System Implementation
+
+### Login Page (`/login`)
+- **Location**: `/app/login/page.tsx`
+- **Features**:
+  - Role-based authentication
+  - Demo credentials for testing
+  - Form validation and error handling
+  - Responsive design with gradient styling
+  - Password visibility toggle
+
+### Authentication API (`/api/auth/login`)
+- **Backend URL**: `http://localhost:3000/api/auth/login`
+- **Method**: POST
+- **Body**: `{ email: string, password: string }`
+- **Response**: 
+  ```json
+  {
+    "success": true,
+    "message": "Login successful",
+    "data": {
+      "user": {
+        "id": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "email": "string",
+        "role": "admin|companyOwner|branchManager|teamLeader|employee",
+        "avatar": "string|null",
+        "company": { /* company object */ },
+        "branch": { /* branch object */ },
+        "team": { /* team object */ },
+        "preferences": { /* preferences object */ }
+      },
+      "tokens": {
+        "accessToken": "JWT_TOKEN",
+        "refreshToken": "REFRESH_TOKEN"
+      }
+    }
+  }
+  ```
+
+### Demo Credentials
+Based on the real backend system:
+
+#### Admin
+- Email: `admin@system.com`
+- Password: `Admin123!`
+- Role: `admin`
+
+#### Company Owner
+- Email: `companyowner@system.com`
+- Password: `Owner123!`
+- Role: `companyOwner`
+
+#### Branch Manager
+- Email: `branchmanager@system.com`
+- Password: `Manager123!`
+- Role: `branchManager`
+
+#### Team Leader
+- Email: `teamleader@system.com`
+- Password: `Leader123!`
+- Role: `teamLeader`
+
+#### Employee
+- Email: `employee@system.com`
+- Password: `Employee123!`
+- Role: `employee`
+
+### Authentication Flow
+1. User selects role on login page
+2. Enters credentials (or uses demo credentials)
+3. System validates credentials against mock database
+4. JWT tokens are generated and stored
+5. User is redirected to role-specific dashboard
+
+### Middleware Protection
+- **Location**: `/middleware.ts`
+- **Function**: Protects routes based on user roles
+- **Features**:
+  - Token validation
+  - Role-based access control
+  - Automatic redirects for unauthorized access
+
+### Authentication Utilities
+- **Location**: `/utils/auth.ts`
+- **Functions**:
+  - `getAuthState()`: Get current authentication state
+  - `setAuthState()`: Store authentication data
+  - `clearAuthState()`: Clear authentication data
+  - `isAuthenticated()`: Check if user is logged in
+  - `getCurrentUser()`: Get current user details
+  - `hasRole()`: Check user role
+  - `logout()`: Logout and clear session
+
+### Testing the Login System
+1. Ensure backend is running on: `http://localhost:3000`
+2. Start frontend development server: `npm run dev`
+3. Visit: `http://localhost:3001/login`
+4. Select a role from dropdown
+5. Click "Use Demo Credentials" button
+6. Click "Sign In"
+7. Verify redirection to appropriate dashboard
+
+### Integration with Real Backend
+- **Backend URL**: `http://localhost:3000`
+- **Authentication**: Real JWT tokens
+- **Token Storage**: localStorage (client-side)
+- **Route Protection**: Client-side AuthGuard component
+- **API Calls**: Authenticated fetch with Bearer tokens

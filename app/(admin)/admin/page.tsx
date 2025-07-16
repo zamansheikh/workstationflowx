@@ -1,3 +1,5 @@
+"use client";
+
 import DashboardInfoCard from "@/components/DashboardInfoCard";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
@@ -5,19 +7,21 @@ import React from "react";
 import CompanyCard from "./components/CompanyCard";
 import SystemAnalyticsChart from "./components/SystemAnalyticsChart";
 import RecentActivities from "./components/RecentActivities";
+import AuthGuard from "@/components/AuthGuard";
 
 const Page = () => {
   return (
-    <div className="p-6 space-y-6">
-      {/* info cards */}
-      <div className="flex flex-col xl:flex-row gap-4">
-        <DashboardInfoCard title="Total Company" quantity={120} />
-        <DashboardInfoCard title="Active Company" quantity={120} />
-        <DashboardInfoCard title="Total Revenue" quantity={120} />
-      </div>
+    <AuthGuard requiredRole="admin">
+      <div className="p-6 space-y-6">
+        {/* info cards */}
+        <div className="flex flex-col xl:flex-row gap-4">
+          <DashboardInfoCard title="Total Company" quantity={120} />
+          <DashboardInfoCard title="Active Company" quantity={120} />
+          <DashboardInfoCard title="Total Revenue" quantity={120} />
+        </div>
 
-      {/* system analytics and recent activities */}
-      <div className="flex flex-col xl:flex-row gap-6">
+        {/* system analytics and recent activities */}
+        <div className="flex flex-col xl:flex-row gap-6">
         {/* system analytics chart */}
         <div className="flex-1">
           <SystemAnalyticsChart />
@@ -51,6 +55,7 @@ const Page = () => {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 };
 

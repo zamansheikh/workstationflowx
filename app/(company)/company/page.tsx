@@ -6,6 +6,7 @@ import BranchCard from "../components/BranchCard";
 import Link from "next/link";
 import DeliveryProgressChart from "../components/DeliveryProgressChart";
 import Employee from "../components/Employee";
+import AuthGuard from "@/components/AuthGuard";
 const data = [
   {
     name: "JVAI",
@@ -51,7 +52,8 @@ const data = [
 
 const CompanyHome = () => {
   return (
-    <div>
+    <AuthGuard requiredRole="companyOwner">
+      <div>
       <div className="flex flex-col xl:flex-row gap-4">
         <DashboardInfoCard title="Total Branch" quantity={120} />
         <DashboardInfoCard title="Monthly Target" quantity={`$${120}`} />
@@ -92,6 +94,7 @@ const CompanyHome = () => {
         </div>
       </div>
     </div>
+    </AuthGuard>
   );
 };
 
